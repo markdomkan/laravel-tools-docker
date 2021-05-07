@@ -1,4 +1,4 @@
-FROM php:7.4-fpm-alpine
+FROM php:7.3-fpm-alpine
 
 # Get latest Composer and set composer bin into path
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
