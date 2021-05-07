@@ -1,5 +1,7 @@
 FROM php:7.3-fpm-alpine
 
+WORKDIR /app
+
 # Get latest Composer and set composer bin into path
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 RUN echo "export PATH=$PATH:~/.composer/vendor/bin \r" >> ~/.bashrc && \
@@ -28,10 +30,7 @@ RUN echo "export PATH=$PATH:~/.composer/vendor/bin \r" >> ~/.bashrc && \
     intl && \
     # Create App user
     adduser -u 1000 -G root -D app && \
-    mkdir /app && \
     chown -R app /app
 
 USER app
-
-WORKDIR /app
 
