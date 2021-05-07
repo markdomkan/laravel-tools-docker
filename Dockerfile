@@ -6,8 +6,8 @@ RUN echo "export PATH=$PATH:~/.composer/vendor/bin \r" >> ~/.bashrc && \
     # Install node and git
     apk add --no-cache nodejs npm git && \
     npm i -g yarn && \ 
-    # its necessary to nova cards
-    apk add --no-cache libpng-dev && \
+    # its necessary to build nova cards
+    apk add --no-cache libpng-dev bash gcc make musl-dev && \
     # INSTALL PHP EXTENCIONS
     # dependences for extencions
     apk add --no-cache \
@@ -26,9 +26,6 @@ RUN echo "export PATH=$PATH:~/.composer/vendor/bin \r" >> ~/.bashrc && \
     pdo_mysql \
     exif \
     intl && \
-    # Remove builder depencences
-    apk del --no-cache autoconf make g++ && \
-    #CONFIGS
     # Create App user
     adduser -u 1000 -G root -D app && \
     mkdir /app && \
