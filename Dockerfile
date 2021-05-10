@@ -4,9 +4,9 @@ WORKDIR /app
 
 # Get latest Composer and set composer bin into path
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
-RUN echo "export PATH=$PATH:~/.composer/vendor/bin \r" >> ~/.bashrc && \
-    # Install node and git
-    apk add --no-cache nodejs npm git && \
+
+# Install node and git
+RUN apk add --no-cache nodejs npm git && \
     npm i -g yarn && \ 
     # its necessary to build nova cards
     apk add --no-cache libpng-dev bash gcc make musl-dev && \
@@ -27,10 +27,4 @@ RUN echo "export PATH=$PATH:~/.composer/vendor/bin \r" >> ~/.bashrc && \
     mysqli \
     pdo_mysql \
     exif \
-    intl && \
-    # Create App user
-    adduser -u 1000 -G root -D app && \
-    chown -R app /app
-
-USER app
-
+    intl
