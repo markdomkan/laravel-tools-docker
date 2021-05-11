@@ -23,7 +23,7 @@ RUN apk update && \
     freetype-dev libjpeg-turbo-dev && \
     # CONFIGURE extencions
     docker-php-ext-configure intl && \
-    docker-php-ext-configure gd --enable-gd --with-freetype --with-jpeg && \
+    docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ && \
     # INSTALL EXTENCIONS
     docker-php-ext-install zip \
     bcmath \
