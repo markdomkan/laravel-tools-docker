@@ -10,7 +10,7 @@ RUN apk update && \
     apk add --no-cache nodejs npm git && \
     npm i -g yarn && \ 
     # its necessary to build nova cards
-    apk add --no-cache libpng-dev bash gcc make musl-dev \
+    apk add --no-cache libpng-dev bash g++ make zlib-dev \
     # INSTALL PHP EXTENCIONS
     # dependences for extencions:
     # dependences for zip
