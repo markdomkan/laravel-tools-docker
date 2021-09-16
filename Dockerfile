@@ -9,7 +9,7 @@ COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
 RUN apk update && \
     # Install node and git
-    apk add --no-cache nodejs npm git && \
+    apk add --no-cache nodejs npm git openssh && \
     npm i -g yarn && \ 
     # its necessary to build nova cards
     apk add --no-cache libpng-dev bash g++ make zlib-dev \
