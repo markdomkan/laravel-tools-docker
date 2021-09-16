@@ -1,4 +1,6 @@
-FROM php:7.1-fpm-alpine
+ARG PHP_VERSION
+
+FROM php:${PHP_VERSION}-fpm-alpine
 
 WORKDIR /app
 
@@ -31,4 +33,6 @@ RUN apk update && \
     pdo_mysql \
     exif \
     gd \
-    intl
+    intl \
+    sh -c "$(wget -O- https://github.com/deluan/zsh-in-docker/releases/download/v1.1.1/zsh-in-docker.sh)" && \
+    sed -i -e "s/bin\/ash/bin\/zsh/" /etc/passwd

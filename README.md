@@ -1,10 +1,13 @@
 # Container with all necessary to build and test laravel
 
+> ***USAGE THIS BRANCH IN CASE OF PHP VERSION BETWEEN 7.1 AND 7.3***
+
 This image contains a all necessary to build and test laravel framework.
+
 
 Some of these libs are necessary for build laravel nova tools.
 
-- **php**: 7.1
+- **php**: ( use --build-arg PHP_VERSION='YOUR VERSION' )
 - **node**: 14.16 with **yarn**
 - sh, bash
 - php extensions:
