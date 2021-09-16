@@ -2,6 +2,8 @@
 
 This image contains a all necessary to build and test laravel framework.
 
+> ***USAGE THIS BRANCH IN CASE OF PHP VERSION 7.4 AND UP***
+
 Some of these libs are necessary for build laravel nova tools.
 
 - **php**: *( use --build-arg PHP_VERSION='YOUR VERSION' )*
