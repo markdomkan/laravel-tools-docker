@@ -9,7 +9,7 @@ Some of these libs are necessary for build laravel nova tools.
 
 - **php**: ( use --build-arg PHP_VERSION='YOUR VERSION' )
 - **node**: 14.16 with **yarn**
-- sh, bash
+- sh, bash, openssh, g++
 - php extensions:
   - bcmath
   - ctype
