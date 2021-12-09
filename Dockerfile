@@ -12,7 +12,7 @@ RUN apk update && \
     apk add --no-cache nodejs npm git openssh && \
     npm i -g yarn && \ 
     # its necessary to build nova cards
-    apk add --no-cache libpng-dev bash g++ make zlib-dev \
+    apk add --no-cache libpng-dev bash g++ make zlib-dev python2 python3 \
     # INSTALL PHP EXTENCIONS
     # dependences for extencions:
     # dependences for zip
@@ -22,7 +22,7 @@ RUN apk update && \
     # dependences for intl
     icu-dev \
     #dependences for gd
-    freetype-dev libjpeg-turbo-dev && \
+    freetype-dev libjpeg-turbo-dev \
     # CONFIGURE extencions
     docker-php-ext-configure intl && \
     docker-php-ext-configure gd --enable-gd --with-freetype --with-jpeg && \
